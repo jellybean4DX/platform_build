@@ -49,6 +49,7 @@ ifeq "$(wildcard $(KERNEL_SRC) )" ""
         $(error "NO KERNEL")
     endif
 else
+    NEEDS_KERNEL_COPY := true
     ifeq ($(TARGET_KERNEL_CONFIG),)
         $(warning **********************************************************)
         $(warning * Kernel source found, but no configuration was defined  *)
